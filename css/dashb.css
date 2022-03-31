@@ -2,14 +2,15 @@
     margin: 0;
     padding: 0;
     font-size: 16;
+    box-sizing: border-box;
 }
 
 .container {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 60px 1fr 5fr;
+    grid-template-rows: 60px 1fr 10px 4fr;
 }
 
 .sidebar {
@@ -115,4 +116,112 @@
 
 .profile_btn:hover {
     cursor: pointer;
+}
+
+.main {
+    background: #999;
+    grid-column: 2 / -1;
+    grid-row: 4 / -1;
+    display: grid;
+    grid-template-columns: 4fr 1.5fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 0 15px;
+}
+
+.projects > p {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+.projects > p,
+.announcements > p,
+.trending > p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.projects {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    background: rebeccapurple;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 49%));
+    grid-template-rows: 27px repeat(3, 200px);
+    grid-auto-rows: minmax(200px, 49%);
+    padding: 10px;
+    gap: 15px;
+}
+
+.project {
+    background: white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 0 20px;
+    box-shadow: inset 10px 0px turquoise;
+    border-radius: 15px;
+}
+
+.project_text {
+    margin-top: -40px;
+}
+
+.project_btns {
+    width: 40%;
+    align-self: end;
+    margin-bottom: -30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.announcements {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 10px 17px 17px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
+}
+
+.announcements_container {
+    width: 100%;
+    align-self: center;
+    border-radius: 15px;
+    background: white;
+    padding: 30px 15px;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+}
+
+.announcement {
+    background: white;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: start;
+    padding: 10px 0 0 0;
+    border-top: 2px solid #ccc;
+}
+
+.announcement:first-child {
+    padding: 0;
+    border: 0;
+}
+
+.trending {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0 17px 17px 0;
+    gap: 15px;
+}
+
+.trending_container {
+    width: 100%;
+    height: 250px;
+    background: purple;
+    border-radius: 15px;
+    padding: 15px;
 }
