@@ -1,3 +1,7 @@
+:root {
+    --shadow: 3px 3px 5px #777;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,10 +17,58 @@
     grid-template-rows: 60px 1fr 10px 4fr;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .sidebar {
     background: #c026d3;
     grid-column: 1;
     grid-row: 1 / -1;
+    padding: 5px;
+    display: grid;
+    grid-template-rows: repeat(3, max-content);
+    row-gap: 50px;
+}
+
+.sidebar_item,
+.logo {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2, max-content);
+    margin: auto 0;
+}
+
+.sidebar_item {
+    gap: 20px;
+}
+
+.sidebar_item > p {
+    align-self: end;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo p {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 5rem;
+}
+
+.sidebar_item img {
+    width: 1.5rem;
+}
+
+.main_pages,
+.extra_pages {
+    padding-left: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
 }
 
 .searchbar {
@@ -31,7 +83,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 45vw;
+    width: 60vw;
 }
 
 .search_icon {
@@ -39,7 +91,7 @@
 }
 
 .search {
-    width: 40vw;
+    width: 45vw;
     height: 30px;
     background: #eee;
     border-radius: 10px;
@@ -49,7 +101,8 @@
     width: 43%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 30px;
 }
 
 .pfpic {
@@ -59,7 +112,7 @@
     border-radius: 50%;
 }
 
-.helper_container {
+.profile_container {
     width: 90%;
     margin: auto;
 }
@@ -119,7 +172,7 @@
 }
 
 .main {
-    background: #999;
+    background: #ccc;
     grid-column: 2 / -1;
     grid-row: 4 / -1;
     display: grid;
@@ -143,7 +196,6 @@
 .projects {
     grid-column: 1;
     grid-row: 1 / -1;
-    background: rebeccapurple;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 49%));
     grid-template-rows: 27px repeat(3, 200px);
@@ -159,7 +211,7 @@
     justify-content: space-evenly;
     align-items: flex-start;
     padding: 0 20px;
-    box-shadow: inset 10px 0px turquoise;
+    box-shadow: inset 10px 0px turquoise, var(--shadow);
     border-radius: 15px;
 }
 
@@ -193,6 +245,7 @@
     display: flex;
     flex-flow: column wrap;
     gap: 10px;
+    box-shadow: var(--shadow);
 }
 
 .announcement {
@@ -228,6 +281,7 @@
     flex-flow: column nowrap;
     align-items: center;
     gap: 5px;
+    box-shadow: var(--shadow);
 }
 
 .trending_item {
