@@ -95,6 +95,22 @@ a {
     height: 30px;
     background: #eee;
     border-radius: 10px;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+}
+
+.search:hover {
+    background: #ddd;
+}
+
+.search:focus {
+    background: rgba(128, 0, 128, 0.2);
+    outline: none;
+}
+
+.search_space > label {
+    cursor: pointer;
 }
 
 .user_info {
